@@ -2,7 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "php artisan serve && vite",
+        "start": "php artisan serve && vite",
+        "dev": "vite",
         "build": "vite build"
     },
     "devDependencies": {
