@@ -2,13 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/users', [UserController::class, 'index']);
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin', [UserController::class, 'index'])->name('admin.index');
 });
@@ -16,6 +16,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/client', [ClientController::class, 'index'])->name('client.index');
+    Route::get('/client/register', [ClientController::class, 'create'])->name('client.create');
+    Route::patch('/client/id', [ClientController::class, 'update'])->name('client.update');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
