@@ -1,5 +1,14 @@
 #Class Manager
 
+For dev commands are:
+```
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+npm start(php artisan serve && vite)
+```
+#Docs:
 ## Account
 
 ### Methods
