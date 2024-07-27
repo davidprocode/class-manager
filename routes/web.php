@@ -19,8 +19,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/client', [ClientController::class, 'index'])->name('client.index');
-    Route::get('/client/register', [ClientController::class, 'create'])->name('client.create');
-    Route::patch('/client/id', [ClientController::class, 'update'])->name('client.update');
+    Route::get('/client/create', [ClientController::class, 'create'])->name('client.create');
+    Route::post('/client/create', [ClientController::class, 'store'])->name('client.store');
 });
 
 Route::middleware('auth')->group(function () {

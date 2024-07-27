@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
 use App\Models\Client;
@@ -30,7 +31,21 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        //
+        // $request->validate([
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'login_code' => ['required', 'string'],
+        //     'date_of_birth' => ['required', 'date'],
+        // ]);
+
+        $client = Client::create([
+            'name' => $request->name,
+            'login_code' => $request->login_code,
+            'date_of_birth' => $request->date_of_birth,
+        ]);
+
+        // event(new Registered($client));
+
+        return Redirect::route('client.index');
     }
 
     /**

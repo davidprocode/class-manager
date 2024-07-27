@@ -17,14 +17,17 @@
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">ID</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Name</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Email</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">login_code</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">date_of_birth</th>
                             </tr>
                         </thead>
                         <tbody class="bg-gray-900 divide-y divide-gray-700">
                             @foreach($clients as $client)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-gray-300">{{ $user->id }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-gray-300">{{ $user->name }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-300">{{ $client->id }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-300">{{ $client->name }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-300">{{ $client->login_code }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-300">{{ $client->date_of_birth }}</td>
                             </tr>
                             @endforeach
                         </tbody>
