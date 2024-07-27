@@ -18,6 +18,12 @@
                     <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
                         {{ __('Admin') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('client.index')" :active="request()->routeIs('client.index')">
+                        {{ __('Client') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('client.create')" :active="request()->routeIs('client.create')">
+                        {{ __('Client Create') }}
+                    </x-nav-link>
                 </div>
             </div>
 
